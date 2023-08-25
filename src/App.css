@@ -30,6 +30,7 @@
   font-size: 14px;
   color: blue;
   font-weight: 500;
+  cursor: pointer;
 }
 .alert__container{
   font-weight: 500;

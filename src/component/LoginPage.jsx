@@ -19,10 +19,10 @@ function LoginPage() {
             return
         })
         if(bool){
-            console.log('u r n')
+            alert('navigate to the next page')
         }
         else{
-            console.log('bad user')
+            alert('please sign up first to enjoy services')
         }
     }
     return (
