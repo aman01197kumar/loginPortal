@@ -7,6 +7,9 @@ function SignupPage() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [contactNumber, setContactNumber] = useState(null);
+  const[userNameAlert,setUserNameAlert] = useState("")
+  const [passwordAlert, setPasswordAlert] = useState('')
+  const [contactNumberAlert, setContactNumberAlert] = useState('')
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
@@ -15,10 +18,10 @@ function SignupPage() {
   const contnueBtnHandler = () => {
     if (userName && password && contactNumber) {
       if (contactNumber.split("").length !== 10) {
-        console.log("contactNumber");
+        setContactNumberAlert('Contact number must be of 10 digis')
       }
       if (password.split("").length < 6) {
-        console.log("password");
+        setPasswordAlert('password length must be of alteast 6 digits')
       } else {
         const details = {
           userName: userName,
@@ -30,26 +33,16 @@ function SignupPage() {
         navigate("/");
       }
     } else {
-      console.log("fill the details");
+      alert("fill the details");
     }
   };
   return (
     <div className="signup__wrapper">
       <div
         className="signup__container"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          width: "25%",
-          margin: "5rem auto",
-          padding: "1rem",
-          border: "1px solid",
-        }}
       >
         <div
           className="signup__heading"
-          style={{ textAlign: "center", fontWeight: "500", padding: "1rem" }}
         >
           Create an Account
         </div>
@@ -71,6 +64,7 @@ function SignupPage() {
             setContactNumber(e.target.value);
           }}
         />
+        <div className="alert__container">{contactNumberAlert}</div>
         <label>Your Email Id</label>
         <input
           type="email"
@@ -89,15 +83,15 @@ function SignupPage() {
             setPassword(e.target.value);
           }}
         />
+        <div className="alert__container">{passwordAlert}</div>
         <button style={{ marginTop: "1rem" }} onClick={contnueBtnHandler}>
           continue
         </button>
         <div>
           <div>
             already have an account{" "}
-            <span
+            <span className="sign_in_span"
               onClick={() => navigate("/")}
-              style={{ fontSize: "14px", color: "blue", fontWeight: "500" }}
             >
               Sign in
             </span>
