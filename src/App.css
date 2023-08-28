@@ -36,8 +36,27 @@
   font-weight: 500;
   color: red;
 }
+.Navpage-flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.Navpage-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  font-size: 7rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 @media only screen and (max-width: 616px) {
   .login_validator {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .Navpage-desc{
     flex-wrap: wrap;
   }
 }

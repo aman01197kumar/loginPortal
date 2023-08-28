@@ -23,11 +23,11 @@ function NavPage() {
     }
   return (
     <div>
-      <div style={{display:'flex',justifyContent:'flex-end'}}>
+      <div className="Navpage-flex-container">
         <button onClick={signOutHandler}>Sign out</button>
         <button onClick={deleteAccountHandler}>Delete Account</button>
       </div>
-      <div style={{display:'flex', alignItems:'center', justifyContent:'center', margin:'auto'}}>Welcome {name}</div>
+      <div className='Navpage-desc'>Welcome &nbsp;<span style={{fontWeight:'600'}}>{name}</span> </div>
     </div>
   )
 }
